@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
-import bgTop from "../assets/bg-top.svg";
-import bgBottom from "../assets/bg-bottom.svg";
 import Card from "../components/card";
+import Background from "../components/background";
+import Title from "../components/title";
+import ModeText from "../components/modeText";
+import ModeButton from "../components/modeButton";
 
 function App() {
   const [mode, setMode] = useState("monthly");
@@ -13,47 +15,16 @@ function App() {
 
   return (
     <div>
-      <div>
-        <img
-          src={bgTop}
-          alt="Background Top"
-          className="fixed top-0 right-[-200px] lg:right-0 z-0"
-        />
-        <img
-          src={bgBottom}
-          alt="Background Bottom"
-          className="fixed bottom-0 left-0 z-0"
-        />
-      </div>
+      <Background />
 
       <main>
         <div className="flex flex-col justify-center items-center gap-10 mt-16 mb-16 z-10">
-          <div className="title">
-            <h1 className="text-gray font-bold text-[2rem] leading-normal text-center">
-              Our Pricing
-            </h1>
-          </div>
+          <Title />
 
           <div className="mode flex justify-between items-center gap-6">
-            <h2 className="text-gray opacity-50 font-bold text-base">
-              Annually
-            </h2>
-            <button
-              className={`bg-gradient-to-br from-blue-purple-start to-blue-purple-end w-14 h-8 rounded-full flex justify-center items-center transition-all duration-200 hover:opacity-50`}
-              type="button"
-              onClick={handleMode}
-            >
-              <div
-                className={`circle w-6 h-6 bg-white rounded-full transition-all duration-200 ${
-                  mode === "annually"
-                    ? "-translate-x-[46%]"
-                    : "translate-x-[46%]"
-                }`}
-              ></div>
-            </button>
-            <h2 className="text-gray opacity-50 font-bold text-base">
-              Monthly
-            </h2>
+            <ModeText text="Annually" />
+            <ModeButton mode={mode} handleMode={handleMode} />
+            <ModeText text="Monthly" />
           </div>
         </div>
 
