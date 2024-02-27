@@ -24,7 +24,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/lucasdaher/pricing-component)
-- Live Site URL: [Netlify](https://your-live-site-url.com)
+- Live Site URL: [Preview](https://lucasdaher-pricingcomponent.netlify.app/)
 
 ### Built with
 
